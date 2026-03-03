@@ -1,14 +1,14 @@
 cask "gitlab-contribution-tracker" do
-  version "1.0.2"
+  version "1.0.3"
 
   on_arm do
     url "https://github.com/Acanguven/gitlab-contribution-tracker/releases/download/v#{version}/GitLab-Tracker-arm64.zip"
-    sha256 "1f9a0ad78f90fc558e2451c879d3c27fda0e271fe85e750466f54f3c2a788eb9"
+    sha256 "ecbef74d928324cb574d9008f8c9605a83930b73918421539e38f8677eeba500"
   end
 
   on_intel do
     url "https://github.com/Acanguven/gitlab-contribution-tracker/releases/download/v#{version}/GitLab-Tracker-x86_64.zip"
-    sha256 "2822c2e9f7ccb17e5993c471a843d36389902ca2d42b2b41dda997a43c65c8a6"
+    sha256 "0a1c85a6cd9bba5bca35cec5a12e2bb7cc1ee35f024838f703dfcc5619d09639"
   end
 
   name "GitLab Contribution Tracker"
