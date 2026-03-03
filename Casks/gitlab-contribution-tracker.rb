@@ -1,14 +1,14 @@
 cask "gitlab-contribution-tracker" do
-  version "1.0.0"
+  version "1.0.1"
 
   on_arm do
     url "https://github.com/Acanguven/gitlab-contribution-tracker/releases/download/v#{version}/GitLab-Tracker-arm64.zip"
-    sha256 "629660466fde951a4a7b7486e6ae57340959c585dfbd8b58eac41a11a5d85bd4"
+    sha256 "fd8020869eba2e90642bd988b595ae6b685257deda03789af9e14e27ff71f212"
   end
 
   on_intel do
     url "https://github.com/Acanguven/gitlab-contribution-tracker/releases/download/v#{version}/GitLab-Tracker-x86_64.zip"
-    sha256 "7f1277900e2a4490cb9877b69f12d0903d7f7b6ff9063c1fa3b8b98a8b22b4b9"
+    sha256 "564fb2fd37e048e4e12c97cc74e0b25eaaa7fea797a163b9820123aa80fb4cbe"
   end
 
   name "GitLab Contribution Tracker"
@@ -21,17 +21,17 @@ cask "gitlab-contribution-tracker" do
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/GitLab Tracker.app"]
+         args: ["-dr", "com.apple.quarantine", "#{appdir}/GitLab Tracker.app"]
     system_command "/usr/bin/osascript",
-                   args: ["-e", 'tell application "System Events" to make login item at end with properties {path:"/Applications/GitLab Tracker.app", hidden:true}']
+         args: ["-e", 'tell application "System Events" to make login item at end with properties {path:"/Applications/GitLab Tracker.app", hidden:true}']
     system_command "/usr/bin/open",
-                   args: ["#{appdir}/GitLab Tracker.app"]
+         args: ["#{appdir}/GitLab Tracker.app"]
   end
 
   uninstall_postflight do
     system_command "/usr/bin/osascript",
-                   args: ["-e", 'tell application "System Events" to delete login item "GitLab Tracker"'],
-                   must_succeed: false
+         args: ["-e", 'tell application "System Events" to delete login item "GitLab Tracker"'],
+         must_succeed: false
   end
 
   zap trash: "~/.config/gitlab-contribution-tracker"
