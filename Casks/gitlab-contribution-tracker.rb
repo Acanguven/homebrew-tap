@@ -17,5 +17,10 @@ cask "gitlab-contribution-tracker" do
 
   app "GitLab Tracker.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/GitLab Tracker.app"]
+  end
+
   zap trash: "~/.config/gitlab-contribution-tracker"
 end
