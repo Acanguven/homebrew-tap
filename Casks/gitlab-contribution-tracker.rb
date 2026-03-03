@@ -24,6 +24,8 @@ cask "gitlab-contribution-tracker" do
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/GitLab Tracker.app"]
     system_command "/usr/bin/osascript",
                    args: ["-e", 'tell application "System Events" to make login item at end with properties {path:"/Applications/GitLab Tracker.app", hidden:true}']
+    system_command "/usr/bin/open",
+                   args: ["#{appdir}/GitLab Tracker.app"]
   end
 
   uninstall_postflight do
