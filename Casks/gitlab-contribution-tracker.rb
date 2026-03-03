@@ -1,14 +1,14 @@
 cask "gitlab-contribution-tracker" do
-  version "1.0.1"
+  version "1.0.2"
 
   on_arm do
     url "https://github.com/Acanguven/gitlab-contribution-tracker/releases/download/v#{version}/GitLab-Tracker-arm64.zip"
-    sha256 "fd8020869eba2e90642bd988b595ae6b685257deda03789af9e14e27ff71f212"
+    sha256 "1f9a0ad78f90fc558e2451c879d3c27fda0e271fe85e750466f54f3c2a788eb9"
   end
 
   on_intel do
     url "https://github.com/Acanguven/gitlab-contribution-tracker/releases/download/v#{version}/GitLab-Tracker-x86_64.zip"
-    sha256 "564fb2fd37e048e4e12c97cc74e0b25eaaa7fea797a163b9820123aa80fb4cbe"
+    sha256 "2822c2e9f7ccb17e5993c471a843d36389902ca2d42b2b41dda997a43c65c8a6"
   end
 
   name "GitLab Contribution Tracker"
@@ -16,8 +16,6 @@ cask "gitlab-contribution-tracker" do
   homepage "https://github.com/Acanguven/gitlab-contribution-tracker"
 
   app "GitLab Tracker.app"
-
-  auto_updates true
 
   postflight do
     system_command "/usr/bin/xattr",
